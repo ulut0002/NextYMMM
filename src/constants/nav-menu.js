@@ -1,57 +1,57 @@
 // Services - Hizmetlerimiz - STARTS
 const service_advisory = {
   id: "advisoryServices",
-  text: "SERVICE_ADVISORY",
+  text: "MENUITEM_SERVICES_ADVISORY",
   url: "../app/[locale]/hizmetler/danismanlik",
   icon: "",
-  tooltip: "SERVICE_ADVISORY_TOOLTIP",
+  tooltip: "MENUITEM_SERVICES_ADVISORY_TOOLTIP",
   role: "menuitem",
-  ariaLabel: "SERVICE_ADVISORY_ARIA",
+  ariaLabel: "MENUITEM_SERVICES_ADVISORY_ARIA",
   submenu: [],
 };
 
 const service_audit = {
   id: "auditServices",
-  text: "SERVICE_AUDIT",
+  text: "MENUITEM_SERVICES_AUDIT",
   url: "../app/[locale]/hizmetler/denetim",
   icon: "",
-  tooltip: "SERVICE_AUDIT_TOOLTIP",
+  tooltip: "MENUITEM_SERVICES_AUDIT_TOOLTIP",
   role: "menuitem",
-  ariaLabel: "SERVICE_AUDIT_ARIA",
+  ariaLabel: "MENUITEM_SERVICES_AUDIT_ARIA",
   submenu: [],
 };
 
 const service_tax = {
   id: "taxServices",
-  text: "SERVICE_TAX",
+  text: "MENUITEM_SERVICES_TAX",
   url: "../app/[locale]/hizmetler/vergi",
   icon: "",
-  tooltip: "SERVICE_TAX_TOOLTIP",
+  tooltip: "MENUITEM_SERVICES_TAX_TOOLTIP",
   role: "menuitem",
-  ariaLabel: "SERVICE_TAX_ARIA",
+  ariaLabel: "MENUITEM_SERVICES_TAX_ARIA",
   submenu: [],
 };
 // Services - Hizmetlerimiz - ENDS
 
 const corporate_next = {
   id: "corporateNext",
-  text: "CORPORATE_NEXT",
+  text: "MENUITEM_CORPORATE_NEXT",
   url: "../app/[locale]/kurumsal/next",
   icon: "",
-  tooltip: "CORPORATE_NEXT_TOOLTIP",
+  tooltip: "MENUITEM_CORPORATE_NEXT_TOOLTIP",
   role: "menuitem",
-  ariaLabel: "CORPORATE_NEXT_ARIA",
+  ariaLabel: "MENUITEM_CORPORATE_NEXT_ARIA",
   submenu: [],
 };
 
 const corporate_vision_mission = {
   id: "corporateMissionVision",
-  text: "CORPORATE_MISSION_VISION",
+  text: "MENUITEM_CORPORATE_MISSION_VISION",
   url: "../app/[locale]/kurumsal/vizyon-misyon",
   icon: "",
-  tooltip: "CORPORATE_MISSION_VISION_TOOLTIP",
+  tooltip: "MENUITEM_CORPORATE_MISSION_VISION_TOOLTIP",
   role: "menuitem",
-  ariaLabel: "CORPORATE_MISSION_VISION_ARIA",
+  ariaLabel: "MENUITEM_CORPORATE_MISSION_VISION_ARIA",
   submenu: [],
 };
 
@@ -66,13 +66,34 @@ const corporate_founding_documents = {
   submenu: [],
 };
 
-const services = [service_advisory, service_audit, service_tax];
+const services = {
+  id: "servicesMenu",
+  text: "MENU_SERVICE_TEXT",
+  url: "../app/[locale]/hizmetler",
+  icon: "",
+  tooltip: "MENU_SERVICE_TEXT_TOOLTIP",
+  role: "menuitem",
+  ariaLabel: "MENU_SERVICE_TEXT_ARIA",
+  submenus: [service_advisory, service_audit, service_tax],
+};
 
-const corporate = [
-  corporate_next,
-  corporate_vision_mission,
-  corporate_founding_documents,
-];
-const menu = {
+const corporate = {
+  id: "corporateMenu",
+  text: "MENU_CORPORATE_TEXT",
+  url: "../app/[locale]/kurumsal",
+  icon: "",
+  tooltip: "MENU_CORPORATE_TEXT_TOOLTIP",
+  role: "menuitem",
+  ariaLabel: "MENU_CORPORATE_TEXT_ARIA",
+  submenus: [
+    corporate_next,
+    corporate_vision_mission,
+    corporate_founding_documents,
+  ],
+};
+
+const navMenuItems = {
   items: [services, corporate],
 };
+
+export default navMenuItems;

@@ -1,3 +1,4 @@
+import navMenuItems from "@/constants/nav-menu";
 import Link from "next/link";
 
 export default function Header() {
@@ -8,6 +9,11 @@ export default function Header() {
       </Link>
       <nav>
         <ul className='flex items-center justify-center font-semibold'>
+          {navMenuItems.map((item) => {
+            const { id, text, url, icon, tooltip, role, ariaLabel, submenu } =
+              item;
+            return <li key={item.id}></li>;
+          })}
           <li className='relative group  px-3 py-2'>
             <button className='hover:opacity-50 cursor-pointer '>
               Products
