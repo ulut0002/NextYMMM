@@ -1,0 +1,36 @@
+{
+  "Navigation": {
+    "logo": {
+      "tooltip": "Next Certified Public Accountant",
+      "alt": "Logo of the Next Certified Public Accounting."
+    },
+    "services": {
+      "text": "Services",
+      "aria-label": "Press to view our services",
+      "tooltip": "Press to view our services Tooltip"
+    },
+    "industries": {
+      "text": "Industries",
+      "aria-label": "Press to view our Industries",
+      "tooltip": "Press to view our Industries Tooltip"
+    },
+    "corporate": {
+      "text": "Corporate",
+      "aria-label": "Press to view our Corporate",
+      "tooltip": "Press to view our Industries Corporate"
+    },
+    "contact": {
+      "text": "Contact",
+      "aria-label": "Press to view our Contact",
+      "tooltip": "Press to view our Industries Contact"
+    }
+  },
+  "Index": {
+    "title": "Hello World"
+  },
+  "AboutUs": {
+    "header-title": "Header Title for About Us",
+    "header-description": "Header Description for About US",
+    "title": "About Us"
+  }
+}

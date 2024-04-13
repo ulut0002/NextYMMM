@@ -1,39 +1,67 @@
 import navMenuItems from "@/constants/nav-menu";
+import { useTranslations } from "next-intl";
+import { getLocale } from "next-intl/server";
 import Link from "next/link";
+import LocalSwitcher from "../local-switcher/LocalSwitcher";
 
-export default function Header() {
+const i18nNamespaces = ["navbar"];
+
+export default async function Header() {
+  const t = useTranslations("Navigation");
+  const locale = await getLocale();
+
   return (
-    <header className='container mx-auto px-4 py-6 flex items-center justify-between'>
-      <Link href={"/"} className='font-bold text-white text-xl' passHref>
+    <header className='container mx-auto  py-6 flex items-center justify-between'>
+      <Link href={"/"} className='font-bold text-black text-xl' passHref>
         Next
       </Link>
       <nav>
         <ul className='flex items-center justify-center font-semibold'>
-          {navMenuItems.map((item) => {
-            const { id, text, url, icon, tooltip, role, ariaLabel, submenu } =
-              item;
-            return <li key={item.id}></li>;
+          {navMenuItems.items.map((item) => {
+            const { id, textId, url = {}, icon, role, submenu } = item;
+            const currUrl = url[locale] || undefined;
+
+            let newUrl = "#";
+            if (currUrl) {
+              newUrl = currUrl.replace("[locale]", locale);
+            }
+            // console.log(newUrl);
+
+            return (
+              <li key={id} className='relative group px-3 py-2'>
+                <Link
+                  className='hover:opacity-50 cursor-pointer'
+                  href={newUrl}
+                  title={t(`${textId}.tooltip`)}
+                  aria-label={t(`${textId}.ariaLabel`)}
+                >
+                  {t(`${textId}.text`)}
+                </Link>
+                {/*
+               <button className='hover:opacity-50 cursor-pointer '></button>
+              
+              */}
+              </li>
+            );
           })}
-          <li className='relative group  px-3 py-2'>
+
+          <li className='relative group px-3 py-2'>
             <button className='hover:opacity-50 cursor-pointer '>
               Products
             </button>
             <div
               className='absolute top-0 -translate-x-48 transition 
               group-hover:translate-y-5 group-focus-within:translate-y-5 translate-y-0 opacity-0 invisible 
+              overflow-hidden
               group-hover:opacity-100 group-focus-within:opacity-100
               group-hover:visible group-focus-within:visible duration-500 ease-in-out 
               group-hover:transform z-50 min-w-[560px]  group-focus-within:transform z-50 min-w-[560px] 
-
-
-     
-            
             '
             >
               <div className='relative top-6 p-6 bg-white rounded-xl shadow-xl w-full'>
-                <div className='w-10 group h-10 bg-white transform rotate-45  absolute top-0 z-0 translate-x-0 transition-transform group-hover:translate-x-[12rem] duration-500 ease-in-out rounded-sm'></div>
+                <div className='w-10 group h-10 bg-black transform rotate-45  absolute top-1 z-0 translate-x-0 transition-transform group-hover:translate-x-[12rem] duration-500 ease-in-out rounded-sm '></div>
 
-                <div className='relative z-10'>
+                <div className='relative z-10 bg-white'>
                   <div className='grid grid-cols-2 gap-6'>
                     <div>
                       <p className='uppercase tracking-wider text-gray-500 font-medium text-[13px]'>
@@ -272,7 +300,7 @@ export default function Header() {
         </ul>
       </nav>
       <nav>
-        <ul>
+        <ul className='flex items-center'>
           <li>
             <Link
               href={"#"}
@@ -302,6 +330,7 @@ export default function Header() {
               </svg>
             </Link>
           </li>
+          <LocalSwitcher />
         </ul>
       </nav>
     </header>

@@ -1,7 +1,7 @@
 // Services - Hizmetlerimiz - STARTS
 const service_advisory = {
   id: "advisoryServices",
-  text: "MENUITEM_SERVICES_ADVISORY",
+  textId: "MENUITEM_SERVICES_ADVISORY",
   url: "../app/[locale]/hizmetler/danismanlik",
   icon: "",
   tooltip: "MENUITEM_SERVICES_ADVISORY_TOOLTIP",
@@ -12,7 +12,7 @@ const service_advisory = {
 
 const service_audit = {
   id: "auditServices",
-  text: "MENUITEM_SERVICES_AUDIT",
+  textId: "MENUITEM_SERVICES_AUDIT",
   url: "../app/[locale]/hizmetler/denetim",
   icon: "",
   tooltip: "MENUITEM_SERVICES_AUDIT_TOOLTIP",
@@ -23,7 +23,7 @@ const service_audit = {
 
 const service_tax = {
   id: "taxServices",
-  text: "MENUITEM_SERVICES_TAX",
+  textId: "MENUITEM_SERVICES_TAX",
   url: "../app/[locale]/hizmetler/vergi",
   icon: "",
   tooltip: "MENUITEM_SERVICES_TAX_TOOLTIP",
@@ -35,7 +35,7 @@ const service_tax = {
 
 const corporate_next = {
   id: "corporateNext",
-  text: "MENUITEM_CORPORATE_NEXT",
+  textId: "MENUITEM_CORPORATE_NEXT",
   url: "../app/[locale]/kurumsal/next",
   icon: "",
   tooltip: "MENUITEM_CORPORATE_NEXT_TOOLTIP",
@@ -46,7 +46,7 @@ const corporate_next = {
 
 const corporate_vision_mission = {
   id: "corporateMissionVision",
-  text: "MENUITEM_CORPORATE_MISSION_VISION",
+  textId: "MENUITEM_CORPORATE_MISSION_VISION",
   url: "../app/[locale]/kurumsal/vizyon-misyon",
   icon: "",
   tooltip: "MENUITEM_CORPORATE_MISSION_VISION_TOOLTIP",
@@ -57,7 +57,7 @@ const corporate_vision_mission = {
 
 const corporate_founding_documents = {
   id: "corporateFoundingDocuments",
-  text: "CORPORATE_FOUNDING_DOCUMENTS",
+  textId: "CORPORATE_FOUNDING_DOCUMENTS",
   url: "../app/[locale]/kurumsal/kurulus-bildirgesi",
   icon: "",
   tooltip: "CORPORATE_FOUNDING_DOCUMENTS_TOOLTIP",
@@ -68,23 +68,27 @@ const corporate_founding_documents = {
 
 const services = {
   id: "servicesMenu",
-  text: "MENU_SERVICE_TEXT",
-  url: "../app/[locale]/hizmetler",
+  textId: "services",
+  // url: "/[locale]/hizmetler",
+  url: {
+    en: "/[locale]/services",
+    tr: "/[locale]/hizmetler",
+  },
   icon: "",
-  tooltip: "MENU_SERVICE_TEXT_TOOLTIP",
+
   role: "menuitem",
-  ariaLabel: "MENU_SERVICE_TEXT_ARIA",
   submenus: [service_advisory, service_audit, service_tax],
 };
 
 const corporate = {
   id: "corporateMenu",
-  text: "MENU_CORPORATE_TEXT",
-  url: "../app/[locale]/kurumsal",
+  textId: "corporate",
+  url: {
+    en: "/[locale]/corporate",
+    tr: "/[locale]/kurumsal",
+  },
   icon: "",
-  tooltip: "MENU_CORPORATE_TEXT_TOOLTIP",
   role: "menuitem",
-  ariaLabel: "MENU_CORPORATE_TEXT_ARIA",
   submenus: [
     corporate_next,
     corporate_vision_mission,
