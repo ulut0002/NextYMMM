@@ -25,47 +25,7 @@
       "tooltip": "Press to view our Industries Contact"
     }
   },
-  "Index": {
-    "metadata": {
-      "title": "Audit, Tax, Advisory, and Consulting Services | Next CPA",
-      "description": "NEXT is a certified professional accounting, firm located in Çukurova region in Türkiye (Turkey) combines deep industry and specialized expertise with experience.",
-      "keywor_ds": [
-        "NEXT",
-        "accounting firm in Turkey",
-        "professional accounting in Turkey",
-        "certified accountants in Adana in Turkish Language",
-        "industry expertise in Türkiye",
-        "specialized accounting expertise ",
-        "trade with Turkey"
-      ],
-      "keywords": "NEXT, accounting firm in Turkey, professional accounting in Turkey, certified accountants in Adana in Turkish Language, industry expertise in Türkiye, specialized accounting expertise, trade with Turkey",
-      "authors": [
-        {
-          "name": "Metin Arslan2 ",
-          "email": "metin@nextymmm.com",
-          "phone": "555-23414",
-          "url": "",
-          "linkedin": ""
-        },
-        {
-          "name": "Soner Altioglu2",
-          "email": "soner@nextymmm.com",
-          "phone": "555-23414",
-          "url": "",
-          "linkedin": ""
-        }
-      ],
-
-      "creator": "NEXT Certified Professional Accounting",
-      "publisher": "",
-      "og": {
-        "title": "Next Certified Professional Accountant",
-        "description": "",
-        "image": "",
-        "url": ""
-      }
-    }
-  },
+  "Index": {},
 
   "AboutUs": {
     "header-title": "Header Title for About Us",
@@ -76,7 +36,37 @@
   "Common": {
     "author-metin": "Metin Arslan, Email: metin@nextymmm.com.tr, Phone: +90 322 555-5555, Linkedin: linkedin.com/metin",
 
-    "author-soner": "Soner Altıoğlu, Email: soner@nextymmm.com.tr, Phone: +90 322 555-5555, Linkedin: linkedin.com/soner"
+    "author-soner": "Soner Altıoğlu, Email: soner@nextymmm.com.tr, Phone: +90 322 555-5555, Linkedin: linkedin.com/soner",
+
+    "Yes": "Yes"
+  },
+
+  "Page_Metadata": {
+    "generator": "NextJS",
+    "creator": "Serdar Ulutas - https://www.linkedin.com/in/serdarulutas/",
+    "publisher": "NEXT Certified Professional Accountant",
+    "applicationName": "NEXT CPA",
+    "keywords": "NEXT, accounting firm in Turkey, professional accounting in Turkey, certified accountants in Adana in Turkish Language, industry expertise in Türkiye, specialized accounting expertise, trade with Turkey"
+  },
+
+  "Metadata": {
+    "default": {
+      "generator": "NextJS",
+      "creator": "Serdar Ulutas - https://www.linkedin.com/in/serdarulutas/",
+      "publisher": "NEXT Certified Professional Accountant",
+      "applicationName": "NEXT CPA",
+      "keywords": "NEXT, accounting firm in Turkey, professional accounting in Turkey, certified accountants in Adana in Turkish Language, industry expertise in Türkiye, specialized accounting expertise, trade with Turkey"
+    },
+    "home": {
+      "title": "Audit, Tax, Advisory, and Consulting Services | Next CPA",
+      "description": "NEXT is a certified professional accounting, firm located in Çukurova region in Türkiye (Turkey) combines deep industry and specialized expertise with experience.",
+      "keywords": "NEXT, accounting firm in Turkey, professional accounting in Turkey, certified accountants in Adana in Turkish Language, industry expertise in Türkiye, specialized accounting expertise, trade with Turkey"
+    },
+    "services": {
+      "title": "Services | Next CPA",
+      "description": "Explore top-tier accounting services at NEXT CPA Firm. Specializing in tax preparation, financial planning, audit support, and business consulting, we ensure personalized solutions tailored to meet your financial goals. Trusted by individuals and businesses alike for expert guidance and reliable results.",
+      "keywords": "CPA in Adana, accounting services Adana, tax preparation Adana, financial planning Adana, audit support Turkey, business consulting Adana, Adana CPA firm, financial services Adana, professional accountant Adana, tax advisor Adana"
+    }
   },
 
   "Lists": {}

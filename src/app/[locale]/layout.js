@@ -11,7 +11,8 @@ import {
   defaultMetadataKeys,
 } from "@/constants/constants";
 import { useFormatter } from "next-intl";
-import { getAuthorNames } from "@/libs/server-utils";
+import { getAuthorNames, getPageMetadata } from "@/libs/server-utils";
+import { metadataPages } from "@/config/metadataSetup";
 
 //main font
 const ibmPlexSans = IBM_Plex_Sans({
@@ -27,19 +28,7 @@ const openSans = Open_Sans({
 });
 
 export async function generateMetadata({ params: { locale } }) {
-  const t = await getTranslations({ locale, namespace: "Index" });
-
-  const tCommon = await getTranslations({ locale, namespace: "Common" });
-
-  const authors = await getAuthorNames();
-
-  const metadata = {
-    ...defaultBasicMetadata,
-    title: t("metadata.title"),
-    description: t("metadata.description"),
-    keywords: t("metadata.keywords"),
-    authors: authors,
-  };
+  const metadata = await getPageMetadata({ page: metadataPages.home });
 
   return metadata;
 }
