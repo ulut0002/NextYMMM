@@ -12,22 +12,7 @@ const defaultBasicMetadata = {
     "specialized accounting expertise ",
     "trade with Turkey",
   ],
-  authors: [
-    {
-      name: "Metin Arslan, Email: metin@nextymmm.com, Phone: ",
-      email: "metin@nextymmm.com",
-      phone: "555-23414",
-      url: "",
-      linkedin: "",
-    },
-    {
-      name: "Soner Altioglu",
-      email: "soner@nextymmm.com",
-      phone: "555-23414",
-      url: "",
-      linkedin: "",
-    },
-  ],
+  authors: [{ name: "Metin Arslan" }, { name: "Soner Altıoğlu" }],
   creator: "NEXT Certified Professional Accounting",
   publisher: "NEXT Certified Professional Accounting",
   formatDetection: {
