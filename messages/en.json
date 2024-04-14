@@ -26,11 +26,58 @@
     }
   },
   "Index": {
-    "title": "Hello World"
+    "metadata": {
+      "title": "Audit, Tax, Advisory, and Consulting Services | Next CPA",
+      "description": "NEXT is a certified professional accounting, firm located in Çukurova region in Türkiye (Turkey) combines deep industry and specialized expertise with experience.",
+      "keywor_ds": [
+        "NEXT",
+        "accounting firm in Turkey",
+        "professional accounting in Turkey",
+        "certified accountants in Adana in Turkish Language",
+        "industry expertise in Türkiye",
+        "specialized accounting expertise ",
+        "trade with Turkey"
+      ],
+      "keywords": "NEXT, accounting firm in Turkey, professional accounting in Turkey, certified accountants in Adana in Turkish Language, industry expertise in Türkiye, specialized accounting expertise, trade with Turkey",
+      "authors": [
+        {
+          "name": "Metin Arslan2 ",
+          "email": "metin@nextymmm.com",
+          "phone": "555-23414",
+          "url": "",
+          "linkedin": ""
+        },
+        {
+          "name": "Soner Altioglu2",
+          "email": "soner@nextymmm.com",
+          "phone": "555-23414",
+          "url": "",
+          "linkedin": ""
+        }
+      ],
+
+      "creator": "NEXT Certified Professional Accounting",
+      "publisher": "",
+      "og": {
+        "title": "Next Certified Professional Accountant",
+        "description": "",
+        "image": "",
+        "url": ""
+      }
+    }
   },
+
   "AboutUs": {
     "header-title": "Header Title for About Us",
     "header-description": "Header Description for About US",
     "title": "About Us"
-  }
+  },
+
+  "Common": {
+    "author-metin": "Metin Arslan, Email: metin@nextymmm.com.tr, Phone: +90 322 555-5555, Linkedin: linkedin.com/metin",
+
+    "author-soner": "Soner Altıoğlu, Email: soner@nextymmm.com.tr, Phone: +90 322 555-5555, Linkedin: linkedin.com/soner"
+  },
+
+  "Lists": {}
 }

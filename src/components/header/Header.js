@@ -29,12 +29,7 @@ export default async function Header() {
 
             return (
               <li key={id} className='relative group px-3 py-2'>
-                <Link
-                  className='hover:opacity-50 cursor-pointer'
-                  href={newUrl}
-                  title={t(`${textId}.tooltip`)}
-                  aria-label={t(`${textId}.ariaLabel`)}
-                >
+                <Link className='hover:opacity-50 cursor-pointer' href={newUrl}>
                   {t(`${textId}.text`)}
                 </Link>
                 {/*

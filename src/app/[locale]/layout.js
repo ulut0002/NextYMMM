@@ -1,9 +1,18 @@
-// "use client";
-
 import { Inter, IBM_Plex_Sans, Open_Sans } from "next/font/google";
 
 import Header from "@/components/header/Header";
+
 import "../../styles/globals.css";
+import React from "react";
+import { getFormatter, getTranslations } from "next-intl/server";
+import { createMetadata } from "@/libs/utils";
+import {
+  defaultBasicMetadata,
+  defaultMetadataKeys,
+} from "@/constants/constants";
+import { useFormatter } from "next-intl";
+import { getAuthorNames } from "@/libs/server-utils";
+
 //main font
 const ibmPlexSans = IBM_Plex_Sans({
   subsets: ["latin"],
@@ -17,14 +26,25 @@ const openSans = Open_Sans({
   weight: ["variable"],
 });
 
-export const metadata = {
-  title: "Create Next App",
-  description: "Tailwind Mega Menu",
-};
+export async function generateMetadata({ params: { locale } }) {
+  const t = await getTranslations({ locale, namespace: "Index" });
 
-const i18nNamespaces = ["home", "common"];
+  const tCommon = await getTranslations({ locale, namespace: "Common" });
 
-export default async function RootLayout({ children, params: { locale } }) {
+  const authors = await getAuthorNames();
+
+  const metadata = {
+    ...defaultBasicMetadata,
+    title: t("metadata.title"),
+    description: t("metadata.description"),
+    keywords: t("metadata.keywords"),
+    authors: authors,
+  };
+
+  return metadata;
+}
+
+export default async function LocaleLayout({ children, params: { locale } }) {
   return (
     <html
       lang={locale}
@@ -39,3 +59,5 @@ export default async function RootLayout({ children, params: { locale } }) {
     </html>
   );
 }
+
+// <head>{meta}</head>
