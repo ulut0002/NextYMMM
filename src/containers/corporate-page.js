@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 
-export default function layout({ children }) {
+export default function CorporatePage() {
   const t = useTranslations(""); // never remove this
 
-  return children;
+  return <div>CorporatePage</div>;
 }

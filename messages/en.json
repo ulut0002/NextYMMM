@@ -7,7 +7,22 @@
     "services": {
       "text": "Services",
       "aria-label": "Press to view our services",
-      "tooltip": "Press to view our services Tooltip"
+      "tooltip": "Press to view our services Tooltip",
+      "advisory": {
+        "text": "Advisory",
+        "subtext": "A differentiated approach relevant to the unique opportunities and challenges you are faced with today.",
+        "ariaLabel": ""
+      },
+      "audit": {
+        "text": "Audit",
+        "subtext": "Team up with advisors who look beyond the audit itself to create value for your business and stakeholders.",
+        "ariaLabel": ""
+      },
+      "tax": {
+        "text": "Tax",
+        "subtext": "Let us provide you with the insightful and strategic advice needed to navigate the rapidly changing tax landscape.",
+        "ariaLabel": ""
+      }
     },
     "industries": {
       "text": "Industries",
@@ -66,6 +81,11 @@
       "title": "Services | Next CPA",
       "description": "Explore top-tier accounting services at NEXT CPA Firm. Specializing in tax preparation, financial planning, audit support, and business consulting, we ensure personalized solutions tailored to meet your financial goals. Trusted by individuals and businesses alike for expert guidance and reliable results.",
       "keywords": "CPA in Adana, accounting services Adana, tax preparation Adana, financial planning Adana, audit support Turkey, business consulting Adana, Adana CPA firm, financial services Adana, professional accountant Adana, tax advisor Adana"
+    },
+    "corporate": {
+      "title": "Corporate Governance | Next CPA",
+      "description": "At Next CPA, our corporate governance is built on transparency, accountability, and ethical practices. We empower businesses with robust financial strategies and governance frameworks that foster sustainable growth and regulatory compliance.",
+      "keywords": "corporate governance, ethical accounting practices, financial strategy, regulatory compliance, sustainable business growth, Next CPA corporate services"
     }
   },
 

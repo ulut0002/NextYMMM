@@ -1,42 +1,38 @@
+import { pageRoutes } from "@/config/page-routes";
+
 // Services - Hizmetlerimiz - STARTS
 const service_advisory = {
   id: "advisoryServices",
-  textId: "MENUITEM_SERVICES_ADVISORY",
-  url: "../app/[locale]/hizmetler/danismanlik",
-  icon: "",
-  tooltip: "MENUITEM_SERVICES_ADVISORY_TOOLTIP",
+  text: "services.advisory.text",
+  subtext: "services.advisory.subtext",
+  ariaLabel: "services.advisory.ariaLabel",
+  paths: pageRoutes.services_advisory.paths,
   role: "menuitem",
-  ariaLabel: "MENUITEM_SERVICES_ADVISORY_ARIA",
-  submenu: [],
 };
 
 const service_audit = {
   id: "auditServices",
-  textId: "MENUITEM_SERVICES_AUDIT",
-  url: "../app/[locale]/hizmetler/denetim",
-  icon: "",
-  tooltip: "MENUITEM_SERVICES_AUDIT_TOOLTIP",
+  text: "services.audit.text",
+  subtext: "services.audit.subtext",
+  ariaLabel: "services.audit.ariaLabel",
+  paths: pageRoutes.services_audit.paths,
   role: "menuitem",
-  ariaLabel: "MENUITEM_SERVICES_AUDIT_ARIA",
-  submenu: [],
 };
 
 const service_tax = {
   id: "taxServices",
-  textId: "MENUITEM_SERVICES_TAX",
-  url: "../app/[locale]/hizmetler/vergi",
-  icon: "",
-  tooltip: "MENUITEM_SERVICES_TAX_TOOLTIP",
+  text: "services.tax.text",
+  subtext: "services.tax.subtext",
+  ariaLabel: "services.tax.ariaLabel",
+  paths: pageRoutes.services_tax.paths,
   role: "menuitem",
-  ariaLabel: "MENUITEM_SERVICES_TAX_ARIA",
-  submenu: [],
 };
 // Services - Hizmetlerimiz - ENDS
 
 const corporate_next = {
   id: "corporateNext",
   textId: "MENUITEM_CORPORATE_NEXT",
-  url: "../app/[locale]/kurumsal/next",
+  url: "/[locale]/kurumsal/next",
   icon: "",
   tooltip: "MENUITEM_CORPORATE_NEXT_TOOLTIP",
   role: "menuitem",
@@ -97,6 +93,7 @@ const corporate = {
 };
 
 const navMenuItems = {
+  ns: "Navigation",
   items: [services, corporate],
 };
 
