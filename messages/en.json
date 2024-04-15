@@ -5,39 +5,69 @@
       "alt": "Logo of the Next Certified Public Accounting."
     },
     "services": {
-      "text": "Services",
+      "menuText": "Services",
+      "headerText": "Our Services",
       "aria-label": "Press to view our services",
-      "tooltip": "Press to view our services Tooltip",
       "advisory": {
         "text": "Advisory",
         "subtext": "A differentiated approach relevant to the unique opportunities and challenges you are faced with today.",
-        "ariaLabel": ""
+        "aria-label": ""
       },
       "audit": {
         "text": "Audit",
         "subtext": "Team up with advisors who look beyond the audit itself to create value for your business and stakeholders.",
-        "ariaLabel": ""
+        "aria-label": ""
       },
       "tax": {
         "text": "Tax",
         "subtext": "Let us provide you with the insightful and strategic advice needed to navigate the rapidly changing tax landscape.",
-        "ariaLabel": ""
+        "aria-label": ""
       }
     },
     "industries": {
       "text": "Industries",
-      "aria-label": "Press to view our Industries",
-      "tooltip": "Press to view our Industries Tooltip"
+      "aria-label": "Press to view our Industries"
     },
     "corporate": {
-      "text": "Corporate",
-      "aria-label": "Press to view our Corporate",
-      "tooltip": "Press to view our Industries Corporate"
+      "menuText": "Corporate",
+      "headerText": "NEXT Certified Accounting Professionals",
+      "aria-label": "Corporate Information",
+
+      "authorization-documents": {
+        "text": "Authorization Documents",
+        "aria-label": ""
+      },
+      "careers": {
+        "text": "Careers",
+        "aria-label": ""
+      },
+      "founding-declaration": {
+        "text": "Founding Declaration",
+        "aria-label": ""
+      },
+      "get-quote": {
+        "text": "Get Quote",
+        "aria-label": ""
+      },
+      "next": {
+        "text": "NEXT - Our Story",
+        "aria-label": ""
+      },
+      "our-directors": {
+        "text": "Leadership Team",
+        "aria-label": ""
+      },
+      "our-team": {
+        "text": "Our Team",
+        "aria-label": ""
+      },
+      "vision-mission": {
+        "text": "Vision - Mission"
+      }
     },
     "contact": {
       "text": "Contact",
-      "aria-label": "Press to view our Contact",
-      "tooltip": "Press to view our Industries Contact"
+      "aria-label": "Press to view our Contact"
     }
   },
   "Index": {},

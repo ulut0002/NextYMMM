@@ -1,8 +1,13 @@
-import navMenuItems from "@/constants/nav-menu";
+import navMenuItems, {
+  DefaultMenuType,
+  NavigationMenuTypes,
+} from "@/constants/nav-menu";
 import { useTranslations } from "next-intl";
 import { getLocale } from "next-intl/server";
 import Link from "next/link";
 import LocalSwitcher from "../local-switcher/LocalSwitcher";
+import LargeMenu from "../menu/LargeMenu";
+import ListMenu from "../menu/ListMenu";
 
 const i18nNamespaces = ["navbar"];
 
@@ -18,26 +23,21 @@ export default async function Header() {
       <nav>
         <ul className='flex items-center justify-center font-semibold'>
           {navMenuItems.items.map((item) => {
-            const { id, textId, url = {}, icon, role, submenu } = item;
-            const currUrl = url[locale] || undefined;
-
-            let newUrl = "#";
-            if (currUrl) {
-              newUrl = currUrl.replace("[locale]", locale);
+            const { display = DefaultMenuType } = item;
+            if (display.type === NavigationMenuTypes.GRID) {
+              return (
+                <li key={item.id} className='relative group px-3 py-2'>
+                  <LargeMenu key={item.id} menu={item} />
+                </li>
+              );
+            } else if (display.type === NavigationMenuTypes.LIST) {
+              return (
+                <li key={item.id} className='relative group px-3 py-2'>
+                  <ListMenu key={item.id} menu={item} />
+                </li>
+              );
             }
-            // console.log(newUrl);
-
-            return (
-              <li key={id} className='relative group px-3 py-2'>
-                <Link className='hover:opacity-50 cursor-pointer' href={newUrl}>
-                  {t(`${textId}.text`)}
-                </Link>
-                {/*
-               <button className='hover:opacity-50 cursor-pointer '></button>
-              
-              */}
-              </li>
-            );
+            // return null;
           })}
 
           <li className='relative group px-3 py-2'>

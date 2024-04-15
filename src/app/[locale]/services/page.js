@@ -3,6 +3,7 @@ import React from "react";
 import { getPageMetadata } from "@/libs/server-utils";
 import { metadataPages } from "@/config/metadataSetup";
 import ServicesPage from "@/containers/services-page";
+import { useTranslations } from "next-intl";
 
 export async function generateMetadata({ params, searchParams }, parent) {
   const metadata = await getPageMetadata({ page: metadataPages.services });
@@ -10,5 +11,6 @@ export async function generateMetadata({ params, searchParams }, parent) {
 }
 
 export default function OurServicesPage() {
+  const t = useTranslations("");
   return <ServicesPage />;
 }
