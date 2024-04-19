@@ -1,18 +1,21 @@
+// Import various constants and utility functions
 import { Constants } from "@/constants/constants";
-import { languages } from "../appConfig";
-import { pageRoutes } from "../page-routes";
+import { languages } from "../appConfig"; // Supported languages configuration
+import { pageRoutes } from "../page-routes"; // Definitions of page routes
 import {
+  ANNOUNCEMENTS_DEFAULT_MENU,
+  CONTACT_US_DEFAULT_MENU,
   CORP_DEFAULT_MENU,
   INDUSTRIES_DEFAULT_MENU,
   MENU_ITEMS,
   NAV_MENU_TYPES,
   SERVICES_DEFAULT_MENU,
   TOP_MENU_ITEMS,
-} from "./nav-menu-constants";
-import { removeItemFromObject } from "@/libs/utils";
+} from "./nav-menu-constants"; // Navigation menu constants
+import { removeItemFromObject } from "@/libs/utils"; // Utility for removing items from objects
 
 const routeSetup = [];
-const navMenuSetup = [];
+const navigationSetup = [];
 const self = Constants.SELF_URL;
 
 const m = (routeName) => {
@@ -37,7 +40,7 @@ const buildRouteSetup = () => {
 
   const tr = {
     // top nav routes
-
+    lang: languages.tr,
     [TOP_MENU_ITEMS.CORPORATE]: m(corpParent),
     [TOP_MENU_ITEMS.SERVICES]: m(servicesParent),
     [TOP_MENU_ITEMS.ANNOUNCEMENTS]: m(announcementsParent),
@@ -89,7 +92,7 @@ const buildRouteSetup = () => {
 
   const en = {
     // top nav routes
-
+    lang: languages.en,
     [TOP_MENU_ITEMS.CORPORATE]: m(corpParent),
     [TOP_MENU_ITEMS.SERVICES]: m(servicesParent),
     [TOP_MENU_ITEMS.ANNOUNCEMENTS]: m(announcementsParent),
@@ -148,6 +151,7 @@ const buildRouteSetup = () => {
   industriesParent = "الصناعات";
 
   const ar = {
+    lang: languages.ar,
     [TOP_MENU_ITEMS.CORPORATE]: m(corpParent),
     [TOP_MENU_ITEMS.SERVICES]: m(servicesParent),
     [TOP_MENU_ITEMS.ANNOUNCEMENTS]: m(announcementsParent),
@@ -196,10 +200,25 @@ const buildRouteSetup = () => {
   routeSetup.push(ar);
 };
 
+const getRoute = (locale, which) => {
+  if (typeof locale !== "string") return SELF_URL;
+  if (typeof which !== "string") return SELF_URL;
+
+  const routes = routeSetup.find(
+    (r) => r.lang.toLowerCase() === locale.toLowerCase()
+  );
+
+  return routes ? routes[which] || self : self;
+};
+
 const buildMenuSetup = () => {
   let trCorpMenu, enCorpMenu, arCorpMenu;
   let trServicesMenu, enServicesMenu, arServicesMenu;
   let trIndustriesMenu, enIndustriesMenu, arIndustriesMenu;
+  let trAnnouncementsMenu, enAnnouncementsMenu, arAnnouncementsMenu;
+  //   let trPracticalInformation,
+  let trContactUsMenu, enContactUsMenu, arContactUsMenu;
+  let currentLanguage, currentLanguageCode;
 
   trCorpMenu = CORP_DEFAULT_MENU;
   enCorpMenu = CORP_DEFAULT_MENU;
@@ -225,59 +244,198 @@ const buildMenuSetup = () => {
   enIndustriesMenu = INDUSTRIES_DEFAULT_MENU;
   arIndustriesMenu = INDUSTRIES_DEFAULT_MENU;
 
+  trAnnouncementsMenu = ANNOUNCEMENTS_DEFAULT_MENU;
+  enAnnouncementsMenu = ANNOUNCEMENTS_DEFAULT_MENU;
+  arAnnouncementsMenu = ANNOUNCEMENTS_DEFAULT_MENU;
+
+  trContactUsMenu = CONTACT_US_DEFAULT_MENU;
+  enContactUsMenu = CONTACT_US_DEFAULT_MENU;
+  arContactUsMenu = CONTACT_US_DEFAULT_MENU;
+  enContactUsMenu = removeItemFromObject(
+    enContactUsMenu,
+    MENU_ITEMS.CONTACT_US_SUBSCRIBE
+  );
+  arContactUsMenu = removeItemFromObject(
+    arContactUsMenu,
+    MENU_ITEMS.CONTACT_US_SUBSCRIBE
+  );
+
+  currentLanguage = languages.tr;
+  currentLanguageCode = languages.tr.code;
+
   const turkishMenu = {
-    lang: languages.tr,
+    lang: currentLanguage,
     nav: [
       // corp-menu
       {
         code: TOP_MENU_ITEMS.CORPORATE,
-        route: pageRoutes.corporate.paths.tr || self,
+        route: getRoute(currentLanguageCode, TOP_MENU_ITEMS.CORPORATE),
         type: NAV_MENU_TYPES.GRID,
         content: {
-          image: "",
+          image: {},
           items: trCorpMenu,
         },
       },
       //services menu
       {
         code: MENU_ITEMS.SERVICES,
+        route: getRoute(currentLanguageCode, TOP_MENU_ITEMS.SERVICES),
         type: NAV_MENU_TYPES.GRID,
         content: {
-          image: "",
+          image: {},
           items: trServicesMenu,
         },
       },
       {
         code: MENU_ITEMS.INDUSTRIES,
+        route: getRoute(currentLanguageCode, TOP_MENU_ITEMS.INDUSTRIES),
         type: NAV_MENU_TYPES.GRID,
         content: {
-          image: "",
+          image: {},
           items: trIndustriesMenu,
+        },
+      },
+      {
+        code: MENU_ITEMS.ANNOUNCEMENTS,
+        route: getRoute(currentLanguageCode, TOP_MENU_ITEMS.ANNOUNCEMENTS),
+        type: NAV_MENU_TYPES.LIST,
+        content: {
+          image: {},
+          items: trAnnouncementsMenu,
+        },
+      },
+      {
+        code: MENU_ITEMS.CONTACT_US,
+        route: getRoute(currentLanguageCode, TOP_MENU_ITEMS.ANNOUNCEMENTS),
+        type: NAV_MENU_TYPES.LIST,
+        content: {
+          image: {},
+          items: trContactUsMenu,
         },
       },
     ],
   };
+  currentLanguage = languages.en;
+  currentLanguageCode = languages.en.code;
   const englishMenu = {
-    lang: languages.en,
-    // Add menu setup here
+    lang: currentLanguage,
+    nav: [
+      // corp-menu
+      {
+        code: TOP_MENU_ITEMS.CORPORATE,
+        route: getRoute(currentLanguageCode, TOP_MENU_ITEMS.CORPORATE),
+        type: NAV_MENU_TYPES.GRID,
+        content: {
+          image: {},
+          items: trCorpMenu,
+        },
+      },
+      //services menu
+      {
+        code: MENU_ITEMS.SERVICES,
+        route: getRoute(currentLanguageCode, TOP_MENU_ITEMS.SERVICES),
+        type: NAV_MENU_TYPES.GRID,
+        content: {
+          image: {},
+          items: trServicesMenu,
+        },
+      },
+      {
+        code: MENU_ITEMS.INDUSTRIES,
+        route: getRoute(currentLanguageCode, TOP_MENU_ITEMS.INDUSTRIES),
+        type: NAV_MENU_TYPES.GRID,
+        content: {
+          image: {},
+          items: trIndustriesMenu,
+        },
+      },
+      {
+        code: MENU_ITEMS.ANNOUNCEMENTS,
+        route: getRoute(currentLanguageCode, TOP_MENU_ITEMS.ANNOUNCEMENTS),
+        type: NAV_MENU_TYPES.LIST,
+        content: {
+          image: {},
+          items: trAnnouncementsMenu,
+        },
+      },
+      {
+        code: MENU_ITEMS.CONTACT_US,
+        route: getRoute(currentLanguageCode, TOP_MENU_ITEMS.ANNOUNCEMENTS),
+        type: NAV_MENU_TYPES.LIST,
+        content: {
+          image: {},
+          items: trContactUsMenu,
+        },
+      },
+    ],
   };
 
+  currentLanguage = languages.ar;
+  currentLanguageCode = languages.ar.code;
   const arabicMenu = {
-    lang: languages.ar,
-    // Add menu setup here
+    lang: currentLanguage,
+    nav: [
+      // corp-menu
+      {
+        code: TOP_MENU_ITEMS.CORPORATE,
+        route: getRoute(currentLanguageCode, TOP_MENU_ITEMS.CORPORATE),
+        type: NAV_MENU_TYPES.GRID,
+        content: {
+          image: {},
+          items: trCorpMenu,
+        },
+      },
+      //services menu
+      {
+        code: MENU_ITEMS.SERVICES,
+        route: getRoute(currentLanguageCode, TOP_MENU_ITEMS.SERVICES),
+        type: NAV_MENU_TYPES.GRID,
+        content: {
+          image: {},
+          items: trServicesMenu,
+        },
+      },
+      {
+        code: MENU_ITEMS.INDUSTRIES,
+        route: getRoute(currentLanguageCode, TOP_MENU_ITEMS.INDUSTRIES),
+        type: NAV_MENU_TYPES.GRID,
+        content: {
+          image: {},
+          items: trIndustriesMenu,
+        },
+      },
+      {
+        code: MENU_ITEMS.ANNOUNCEMENTS,
+        route: getRoute(currentLanguageCode, TOP_MENU_ITEMS.ANNOUNCEMENTS),
+        type: NAV_MENU_TYPES.LIST,
+        content: {
+          image: {},
+          items: trAnnouncementsMenu,
+        },
+      },
+      {
+        code: MENU_ITEMS.CONTACT_US,
+        route: getRoute(currentLanguageCode, TOP_MENU_ITEMS.ANNOUNCEMENTS),
+        type: NAV_MENU_TYPES.LIST,
+        content: {
+          image: {},
+          items: trContactUsMenu,
+        },
+      },
+    ],
   };
 
   const allLanguages = [];
   allLanguages.push(turkishMenu);
   allLanguages.push(englishMenu);
   allLanguages.push(arabicMenu);
-  // Add other new languags
+  // Add other new languages if necessary
 
   Object.keys(languages).forEach((key) => {
     allLanguages.forEach((item) => {
       if (item.lang === key) {
         if (item.lang.enabled) {
-          navMenuSetup.push(item);
+          navigationSetup.push(item);
         }
       }
     });
@@ -287,4 +445,4 @@ const buildMenuSetup = () => {
 buildRouteSetup();
 buildMenuSetup();
 
-export { navMenuSetup, routeSetup };
+export { navigationSetup, routeSetup };
