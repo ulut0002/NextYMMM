@@ -1,6 +1,9 @@
-import { languages } from "../appConfig";
+const NAV_MENU_TYPES = {
+  LIST: "LIST",
+  GRID: "GRID",
+};
 
-const TOP_MENU = {
+const TOP_MENU_ITEMS = {
   CORPORATE: "CORPORATE",
   SERVICES: "SERVICES",
   INDUSTRIES: "INDUSTRIES",
@@ -19,6 +22,7 @@ const MENU_ITEMS = {
   CORP_FOUNDING_DOCUMENTS: "CORP_FOUNDING_DOCUMENTS",
   CORP_CAREERS: "CORP_CAREERS",
   CORP_GET_QUOTE: "CORP_GET_QUOTE",
+  CORP_SOCIAL_RESPONSIBILITY: "CORP_SOCIAL_RESPONSIBILITY",
 
   // Services menu items
   SERVICES_TAX: "SERVICES_TAX",
@@ -26,9 +30,11 @@ const MENU_ITEMS = {
   SERVICES_ADVISORY: "SERVICES_ADVISORY",
 
   //Industries menu items
-  INDUSTRIES_NUM1: "INDUSTRIES_NUM1",
-  INDUSTRIES_NUM2: "INDUSTRIES_NUM2",
-  INDUSTRIES_NUM3: "INDUSTRIES_NUM3",
+  INDUSTRIES_FARMS: "INDUSTRIES_FARMS",
+  INDUSTRIES_PHARMACEUTICAL: "INDUSTRIES_PHARMACEUTICAL",
+  INDUSTRIES_ENERGY: "INDUSTRIES_ENERGY",
+  INDUSTRIES_HEALTHCARE: "INDUSTRIES_HEALTHCARE",
+  INDUSTRIES_INSURANCE: "INDUSTRIES_INSURANCE",
 
   //Announcements
   ANNOUNCEMENTS_NEWS: "ANNOUNCEMENTS_NEWS",
@@ -43,67 +49,37 @@ const MENU_ITEMS = {
   CONTACT_US_OUR_LOCATION: "CONTACT_US_OUR_LOCATION",
 };
 
-const NAV_MENU_TYPES = {
-  LIST: "LIST",
-  GRID: "GRID",
-  GRID_2: "GRID_2",
+const CORP_DEFAULT_MENU = [
+  MENU_ITEMS.CORP_ABOUT_US,
+  MENU_ITEMS.CORP_MISSION_VISION,
+  MENU_ITEMS.CORP_AUTHORIZATION_DOCUMENTS,
+  MENU_ITEMS.CORP_FOUNDING_DOCUMENTS,
+  MENU_ITEMS.CORP_LEADERSHIP,
+  MENU_ITEMS.CORP_OUR_TEAM,
+  MENU_ITEMS.CORP_CAREERS,
+  MENU_ITEMS.CORP_GET_QUOTE,
+  MENU_ITEMS.CORP_SOCIAL_RESPONSIBILITY,
+];
+
+const SERVICES_DEFAULT_MENU = [
+  MENU_ITEMS.SERVICES_TAX,
+  MENU_ITEMS.SERVICES_AUDIT,
+  MENU_ITEMS.SERVICES_ADVISORY,
+];
+
+const INDUSTRIES_DEFAULT_MENU = [
+  MENU_ITEMS.INDUSTRIES_ENERGY,
+  MENU_ITEMS.INDUSTRIES_FARMS,
+  MENU_ITEMS.INDUSTRIES_HEALTHCARE,
+  MENU_ITEMS.INDUSTRIES_INSURANCE,
+  MENU_ITEMS.INDUSTRIES_PHARMACEUTICAL,
+];
+
+export {
+  TOP_MENU_ITEMS,
+  NAV_MENU_TYPES,
+  MENU_ITEMS,
+  CORP_DEFAULT_MENU,
+  SERVICES_DEFAULT_MENU,
+  INDUSTRIES_DEFAULT_MENU,
 };
-
-const turkishMenu = {
-  lang: languages.tr,
-  nav: [
-    {
-      code: CORPORATE,
-      type: NAV_MENU_TYPES.GRID,
-      content: [
-        {
-          items: [
-            CORP_ABOUT_US,
-            CORP_MISSION_VISION,
-            CORP_AUTHORIZATION_DOCUMENTS,
-            CORP_FOUNDING_DOCUMENTS,
-            CORP_LEADERSHIP,
-            CORP_OUR_TEAM,
-            CORP_CAREERS,
-            CORP_GET_QUOTE,
-          ],
-        },
-      ],
-    },
-    //services menu
-    {
-      code: SERVICES,
-      type: NAV_MENU_TYPES.GRID,
-      content: [
-        {
-          items: [SERVICES_TAX, SERVICES_AUDIT, SERVICES_ADVISORY],
-        },
-      ],
-    },
-  ],
-};
-const englishMenu = {
-  lang: languages.en,
-};
-
-const arabicMenu = {
-  lang: languages.ar,
-};
-
-const navMenuSetup = [];
-const allLanguages = [];
-allLanguages.push(turkishMenu);
-allLanguages.push(englishMenu);
-allLanguages.push(arabicMenu);
-
-Object.keys(languages).forEach((key) => {
-  allLanguages.forEach((item) => {
-    if (item.lang === key) {
-      if (item.lang.enabled) {
-        navMenuSetup.push(item);
-      }
-    }
-  });
-});
-
-export { NAV_MENU_TYPES, navMenuSetup };

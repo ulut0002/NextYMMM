@@ -11,4 +11,8 @@ const defaultMetadataKeys = {
   authors: ["author-metin", "author-soner"],
 };
 
-export { defaultBasicMetadata, defaultMetadataKeys };
+const Constants = {
+  SELF_URL: "#",
+};
+
+export { defaultBasicMetadata, defaultMetadataKeys, Constants };

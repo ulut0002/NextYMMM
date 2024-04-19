@@ -39,4 +39,17 @@ const createMetadata = (payload = {}) => {
   return metaTags;
 };
 
-export { createMetadata };
+const removeItemFromArray = (arr, which) => {
+  if (!Array.isArray(arr)) return;
+  if (typeof which !== "string") return;
+
+  return arr.filter((item) => item === which);
+};
+
+const removeItemFromObject = (obj, which) => {
+  if (typeof obj !== "object") return;
+  if (typeof which !== "string") return;
+  delete obj[which];
+};
+
+export { createMetadata, removeItemFromArray, removeItemFromObject };
