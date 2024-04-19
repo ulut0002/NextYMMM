@@ -6,8 +6,9 @@ import photo from "../../../public/static/400x400.png";
 import Image from "next/image";
 import React from "react";
 
-export default function LargeMenu({ menu, namespace }) {
-  const locale = useLocale();
+export default function LargeMenu({ menu, namespace, locale }) {
+  // const locale = useLocale();
+
   if (!namespace) {
     namespace = namespaces.navigation;
   }
@@ -25,6 +26,9 @@ export default function LargeMenu({ menu, namespace }) {
 
   let href = paths[locale] || "#";
   href = href.replace("[locale]", locale);
+  // href = `./${href}`;
+
+  console.log("href", href);
 
   return (
     <React.Fragment>
@@ -37,12 +41,11 @@ export default function LargeMenu({ menu, namespace }) {
       overflow-hidden
       group-hover:opacity-100 group-focus-within:opacity-100
       group-hover:visible group-focus-within:visible duration-500 ease-in-out 
-      group-hover:transform z-50 min-w-[860px]  
-      group-focus-within:transform z-50 min-w-[860px] '
+      group-hover:transform   group-focus-within:transform z-50 min-w-[860px] '
       >
         <div className='relative top-6 p-6 bg-white rounded-xl shadow-xl w-full'>
           {/* The triangle */}
-          <div className='w-10 group h-10 bg-black transform rotate-45  absolute top-1 z-0 translate-x-0 transition-transform group-hover:translate-x-[12rem] duration-500 ease-in-out rounded-sm '></div>
+          <div className='w-10 group h-10 bg-black transform rotate-45  absolute top-1 z-0 translate-x-0 transition-transform group-hover:translate-x-[12rem] group-focus-within:translate-x-[12rem] duration-500 ease-in-out rounded-sm '></div>
 
           <div className='relative z-10 bg-white p-3  rounded-xl'>
             <div className='grid grid-cols-[4fr,1fr] gap-8  '>

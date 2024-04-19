@@ -6,6 +6,8 @@
   /* --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255; */
+  --text-color: #ffffff;
+  --alert-bg-color: #d0362b;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,10 +15,17 @@
     /* --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0; */
+    /* --text-color: #ffffff */
   }
 }
 
 body {
+}
+
+.alert-bar {
+  @apply flex h-10 items-center justify-center px-4 text-sm font-medium sm:px-6 lg:px-8;
+  color: var(--text-color);
+  background-color: var(--alert-bg-color);
 }
 
 @layer utilities {

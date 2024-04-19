@@ -1,6 +1,6 @@
 // m for "make"
 const m = (routeName) => {
-  return `./${routeName}`;
+  return `/[locale]/${routeName}`;
 };
 
 const pageRoutes = {
@@ -8,6 +8,13 @@ const pageRoutes = {
     paths: {
       en: m("corporate"),
       tr: m("kurumsal"),
+    },
+  },
+
+  services: {
+    paths: {
+      en: m("services"),
+      tr: m("hizmetlerimiz"),
     },
   },
 
@@ -71,13 +78,6 @@ const pageRoutes = {
     paths: {
       en: m("corporate/vision-mission"),
       tr: m("kurumsal/vizyon-misyon"),
-    },
-  },
-
-  services: {
-    paths: {
-      en: m("services"),
-      tr: m("hizmetlerimiz"),
     },
   },
 

@@ -10,7 +10,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
   return metadata;
 }
 
-export default function OurServicesPage() {
+export default function Advisory() {
   const t = useTranslations("Common");
-  return <div>Our Services Main</div>;
+  return <div>Advisory Services Main</div>;
 }
