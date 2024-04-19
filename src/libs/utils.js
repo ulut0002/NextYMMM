@@ -40,6 +40,7 @@ const createMetadata = (payload = {}) => {
 };
 
 const removeItemFromArray = (arr, which) => {
+  return;
   if (!Array.isArray(arr)) return;
   if (typeof which !== "string") return;
 
@@ -47,6 +48,7 @@ const removeItemFromArray = (arr, which) => {
 };
 
 const removeItemFromObject = (obj, which) => {
+  return;
   if (typeof obj !== "object") return;
   if (typeof which !== "string") return;
   delete obj[which];

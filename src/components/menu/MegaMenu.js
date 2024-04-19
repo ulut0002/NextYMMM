@@ -8,6 +8,9 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import "../../styles/globals.css";
+import { useLocale } from "next-intl";
+import { navigationSetup } from "@/config/nav/nav-menus";
+// import { navigationSetup, routeSetup } from "@/config/nav/nav-menus";
 
 const navigation = {
   categories: [
@@ -139,15 +142,20 @@ const navigation = {
   ],
 };
 
+// routeSetup
+// navigationSetup
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 export default function Example() {
+  const locale = useLocale();
+  console.log("locale", locale);
   const [open, setOpen] = useState(false);
 
   return (
     <div className='bg-white'>
+      <p>aaa</p>
       {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>
         <Dialog as='div' className='relative z-40 lg:hidden' onClose={setOpen}>
@@ -323,7 +331,6 @@ export default function Example() {
           </div>
         </Dialog>
       </Transition.Root>
-
       <header className='relative bg-white'>
         <p className='alert-bar'>Get free delivery on orders over $100</p>
 

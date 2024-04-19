@@ -10,7 +10,7 @@ const DefaultMenuType = {
 };
 
 const navMenuItems = {
-  items: [services, corporate],
+  // items: [services, corporate],
 };
 
 export { DefaultMenuType, NavigationMenuTypes };
